@@ -1,0 +1,7 @@
+# Mac
+deactivate conda env
+pyinstaller --onefile --windowed --hidden-import=wx._adv --hidden-import=wx._html --hidden-import=wx._xml dir_to/Yeaseq-ui.py
+pyinstaller --onefile --windowed --hidden-import=wx._adv --hidden-import=wx._html --hidden-import=wx._xml --add-data="external_data;external_data" Yeaseq-ui.py
+
+# Windows
+pyinstaller --onefile --windowed --hidden-import=wx._adv --hidden-import=wx._html --hidden-import=wx._xml --add-data="external_data;external_data" .\Yeaseq-ui.py
