@@ -2,15 +2,15 @@
 
 💬 Yeaseq is a sequence viewer for four fission yeasts: pombe, japonicus, cryophilus, and octosporus
 
-🐶 The main functions are to retrieve sequence and gene annotation from online database (Ensembl Biomart) or download them from NCBI, and show the basic information and colored sequence of queried gene as user defined
+🐶 The main functions are to retrieve sequence and gene annotation from online database (Ensembl Biomart) or download them from NCBI, and show the basic information and coloured sequence of queried gene as user defined
 
-🐍 Yeaseq is developed with python 3.7 and packaged with pyinstaller 3.5 for Windows, MacOS, and Linux (Ubuntu 18.04). wxPython is used to generate graphical interface
+🐍 Yeaseq is developed with python 3.7 and packaged with pyinstaller 3.5 for Windows, macOS, and Linux (Ubuntu 18.04). wxPython is used to generate graphical interface
 
 ## Content
 
 + [Run](#run)
 
-+ [Sequence viewer for yeast](#viewer)
++ [Sequence viewer for fission yeasts](#viewer)
 
 + [Search an expected gene](#search)
 
@@ -22,7 +22,7 @@
 
 ## <span id="run">Run</span>
 
-🍞 The compiled executable files for Windows, MacOS, and Linux (Ubuntu 18.04) are available [here](https://github.com/Sugiyama-Lab/Yeaseq/releases) (https://github.com/Sugiyama-Lab/Yeaseq/releases)
+🍞 The compiled executable files for Windows, cacOS, and Linux (Ubuntu 18.04) are available [here](https://github.com/Sugiyama-Lab/Yeaseq/releases) (https://github.com/Sugiyama-Lab/Yeaseq/releases)
 
 ⛏ To use this package in python, please install 'requests' and 'wxpython', and python >= 3.6 is recommended. Then run `Yeaseq-ui.py` or
 
@@ -40,12 +40,13 @@ app.MainLoop()
 + Yeaseq supports four fission yeasts, including japonicus, cryophilus, octosporus, and pombe
 + To make sure the users can get the up-to-date data of expected genes, prior information are avoided to be introduced to compiled application. To do so, two search modes are proposed, online search and offline search:
   + 📶 In online search mode, the sequence and annotaion of searched gene will be queried in Ensembl Biomart database, and the parsed information will be shown in the result window
-  + 🖥️ In offline search mode, users can download the genome sequence and annotation in one click, and the parsed information will stored in one folder (yeaseq_ref_seq) of user directory. This ensures users can download the newest datasets NCBI
-+ 💡 From version 0.3.6, to take the advantage that over 80% of genes in the fission yeast clade are 1:1:1:1 orthologs, a orthologous gene table was integrated into Yeaseq, and users can search orthologous genes in other three fission yeasts from one. To use this, please cite: Nicholas Rhind et.al. Comparative functional genomics of the fission yeasts. Science 332, 930–6 (2011). https://www.sciencemag.org/lookup/doi/10.1126/science.1203357
+  + 🖥️ In offline search mode, users can download the genome sequence and annotation in one click, and the parsed information will be stored in one folder (yeaseq_ref_seq) of user directory. This ensures users can download the newest datasets from NCBI
++ 💡 From version 0.3.6, to take the advantage that over 80% of genes in the fission yeast clade are 1:1:1:1 orthologs, an orthologous gene table was integrated into Yeaseq, and users can search orthologous genes in other three fission yeasts from one. To use this, please cite: Nicholas Rhind et.al. Comparative functional genomics of the fission yeasts. Science 332, 930–6 (2011). https://www.sciencemag.org/lookup/doi/10.1126/science.1203357
 
 ## <span id="search">Search an expected gene</span>
 
 #### 1. Enter Ensembl ID or Entrez gene ID
+
 1. Ensembl ID used here is also called stable gene ID, which is usually the systematic name of gene. For example:
     * SPBC11B10.09 for pombe
     * SJAG_01836 for japonicus
@@ -67,13 +68,13 @@ app.MainLoop()
 
 #### 4. Use online or offline mode
 
-+ Press the 'Search offline' button, and all searches are offline now. The search status at the lower left corner will also be changed. Please notice that for the current search status
++ Press the 'Search offline' button, and all searches are offline now. The search status at the lower left corner will also be changed. Please have a look at status for current search status
 
 + In offline mode, offline data should be downloaded first before searching and this will take some time that depends on the network
 
-+ Offline search is recommended if there is a bad network
++ Offline search is recommended if the network is not so good
 
-+ The application may have no response once it starts downloading data
++ The application may have no response when it is downloading data
 
 ## <span id="about">About this project</span>
 
@@ -90,7 +91,11 @@ app.MainLoop()
 ## <span id="license">LICENSE</span>
 
 * This repository contains the source code and compiled application, they are under an **MIT** license with ultra-free use
-* This repository also contains a **orthologous data table** from Nicholas Rhind et.al. in their publication in Science 332, 930–6 (2011). To use this (the orthologous gene finder tool in Yeaseq), please cite their excellent work > Comparative functional genomics of the fission yeasts
+
+* This repository also contains an **orthologous data table** from Nicholas Rhind et al. in their publication in Science 332, 930–6 (2011). To use this (the orthologous gene finder tool in Yeaseq), please cite their excellent work
+
+    > Comparative functional genomics of the fission yeasts. Science 332, 930–6 (2011)
+
 * When searching a gene
     * the online search will link to biomart in **Ensembl** and enterz in **NCBI**
     * or use the offline data which would be downloaded from the FTP site from **NCBI**
@@ -98,7 +103,7 @@ app.MainLoop()
     * The **python** language
     * The python built-in packages: urllib, gzip, os, sys, json, re, xml, platform, shutil, io, setuptools
     * The third-party python packages: **requests**, **wxpython**
-* The Yeaseq application is compiled by **pyinstaller** to run on Windows, MacOS, and Linux (Ubuntu)
+* The Yeaseq application is compiled by **pyinstaller** to run on Windows, macOS, and Linux (Ubuntu)
 
 🏳️‍🌈 Here is all, thanks for your reading
 
